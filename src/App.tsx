@@ -62,7 +62,7 @@ function App() {
             <h1 className="text-lg font-semibold">FormEasePro</h1>
             <div className="ml-auto flex items-center space-x-2">
               <Button variant="outline" size="icon">
-                <a>
+                <a href="https://github.com/seeranjeeviramavel/formeasepro" target="_blank">
                 <Github className="h-4 w-4" />
 
                 </a>
