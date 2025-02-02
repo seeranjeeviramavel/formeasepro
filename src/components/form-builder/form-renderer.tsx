@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ComponentSchema } from "@/types/form-builder";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,7 +14,7 @@ interface FormRendererProps {
   readOnly?: boolean;
 }
 
-export function FormRenderer({ components, onComponentClick, readOnly = false }: FormRendererProps) {
+export function FormRenderer({ components, readOnly = false }: FormRendererProps) {
   const initializeFormData = (components: ComponentSchema[]) => {
     const initialData: { [key: string]: any } = {};
     components.forEach((component) => {
@@ -49,12 +49,12 @@ export function FormRenderer({ components, onComponentClick, readOnly = false }:
       className: `${component.prefix || component.suffix ? "rounded-none" : ""} ${readOnly ? "" : "cursor-pointer"}`,
     };
 
-    const labelComponent = !component.hideLabel && (
+    const labelComponent = 
       <Label htmlFor={component.key} className="mb-2 block">
         {component.label}
         {component.validate?.required && <span className="text-destructive ml-1">*</span>}
       </Label>
-    );
+    ;
 
     switch (component.type) {
       case "textfield":
